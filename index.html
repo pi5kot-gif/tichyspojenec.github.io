@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tichý spojenec</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.tichyspojenec.cz/" />
 
     <!-- SEO -->
-    <meta name="description" content="Diskrétní naslouchání po telefonu nebo chatu. Pro chvíle, kdy potřebuješ klid a pochopení.">
-    <meta name="keywords" content="naslouchání, diskrétní rozhovor, telefonická pomoc, anonymní naslouchání, někdo mě vyslechne, vypovídat se, promluvit si, podpora po telefonu, tichý spojenec, rozhovor, duševní podpora, diskrétní poslech, pocit osamění, člověk na poslouchání, sdílení emocí, anonymní hovor, psychická úleva, chat">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Diskrétní naslouchání po telefonu nebo chatu. Pro chvíle, kdy potřebuješ klid a pochopení." />
+    <meta name="keywords" content="naslouchání, diskrétní rozhovor, telefonická pomoc, anonymní naslouchání, někdo mě vyslechne, vypovídat se, promluvit si, podpora po telefonu, tichý spojenec, rozhovor, duševní podpora, diskrétní poslech, pocit osamění, člověk na poslouchání, sdílení emocí, anonymní hovor, psychická úleva, chat" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="Wux8bEKu5weAqxjuTeFRTQVYCtM_RJPL6t5oRrv6S5A" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Tichý spojenec">
-    <meta property="og:description" content="Naslouchám ti po telefonu nebo formou chatu. Diskrétně a s pochopením.">
-    <meta property="og:url" content="https://www.tichyspojenec.cz">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png">
+    <meta property="og:title" content="Tichý spojenec" />
+    <meta property="og:description" content="Naslouchám ti po telefonu nebo formou chatu. Diskrétně a s pochopením." />
+    <meta property="og:url" content="https://www.tichyspojenec.cz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png" />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK421N47RY"></script>
@@ -101,6 +100,39 @@
             background-color: #1976D2;
         }
 
+        form {
+            background-color: #1e1e1e;
+            padding: 1em;
+            border-radius: 8px;
+            margin: 2em 0;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.75em;
+            border: none;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        button[type="submit"] {
+            margin-top: 1em;
+            padding: 0.75em 1.5em;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1976D2;
+        }
+
         footer {
             margin: 2em 0 1em 0;
             font-size: 0.9em;
@@ -150,28 +182,15 @@
 
     <a href="https://cal.com/tichyspojenec" class="button">Rezervovat si čas</a>
 
-    <section class="services">
-        <div class="service">
-            <h3>🔍 Možná hledáš právě tohle:</h3>
-            <p>Potřebuješ si anonymně popovídat?  
-            Hledáš někoho, kdo tě diskrétně vyslechne po telefonu nebo chatu?  
-            Někdy stačí, když si s tebou někdo v klidu popovídá – beze spěchu, beze stresu.</p>
-
-            <p>Jsem tu pro chvíle, kdy tě tíží osamělost, smutek nebo zmatek.  
-            Naslouchám – po telefonu i formou chatu.  
-            Vše je anonymní, citlivé a v bezpečném prostředí.  
-            Vyber si formu, která ti sedí, a rezervuj si svůj čas.</p>
-        </div>
-    </section>
-
     <form action="https://formspree.io/f/mldnyewr" method="POST">
-    <label for="message">Tvoje anonymní zpráva:</label><br>
-    <textarea name="message" id="message" rows="6" cols="40" placeholder="Sem napiš cokoliv…" required></textarea><br>
-    <button type="submit">Odeslat anonymně</button>
+        <input type="hidden" name="_redirect" value="https://www.tichyspojenec.cz/diky.html" />
+        <label for="message">Tvoje anonymní zpráva:</label><br>
+        <textarea name="message" id="message" rows="6" placeholder="Sem napiš cokoliv…" required></textarea><br>
+        <button type="submit">Odeslat anonymně</button>
     </form>
-    
+
     <footer>
-        Kontakt: tichyspojenec@gmail.com<br>
+        Kontakt: tichyspojenec@gmail.com<br />
         &copy; Tichý spojenec
     </footer>
 </body>
