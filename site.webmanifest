@@ -1,6 +1,8 @@
 {
-  "name": "Tich\u00fd spojenec",
+  "name": "Tichý spojenec",
   "short_name": "Spojenec",
+  "lang": "cs",
+  "description": "Diskrétní lidské naslouchání přes telefon nebo chat.",
   "icons": [
     {
       "src": "favicon-32x32.png",
@@ -14,7 +16,7 @@
     }
   ],
   "start_url": "/",
-  "display": "standalone",
+  "display": "minimal-ui",
   "theme_color": "#121212",
   "background_color": "#121212"
 }
