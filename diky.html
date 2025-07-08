@@ -18,20 +18,27 @@
       padding: 2em;
     }
 
-    a {
-      color: #2196F3;
+    .button {
+      display: inline-block;
+      margin-top: 2em;
+      padding: 0.75em 1.5em;
+      background-color: #2196F3;
+      color: white;
       text-decoration: none;
+      border-radius: 5px;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    a:hover {
-      color: #1976D2;
+    .button:hover {
+      background-color: #1976D2;
     }
   </style>
 </head>
 <body>
   <h1>Děkujeme za vaši zprávu 💙</h1>
   <p>Ozveme se, pokud to bude potřeba.<br>Měj hezký den.</p>
-  <p><a href="/">Zpět na úvodní stránku</a></p>
+
+  <a href="/" class="button">Hlavní stránka</a>
 </body>
 </html>
