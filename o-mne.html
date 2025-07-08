@@ -18,17 +18,6 @@
             align-items: center;
         }
 
-        header {
-            padding: 2em 1em 1em 1em;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 1.8em;
-            margin: 0;
-            color: #ffffff;
-        }
-
         section {
             max-width: 600px;
             padding: 1em 2em;
@@ -41,17 +30,23 @@
             margin-bottom: 1em;
         }
 
-        img.logo {
-            width: 60px;
-            height: auto;
-            opacity: 0.9;
-            margin: 1em auto 0;
-            display: block;
+        .center-button {
+            text-align: center;
+            margin-top: 2em;
         }
 
-        a {
-            color: #2196F3;
+        .center-button a {
+            background-color: #2196F3;
+            color: white;
+            padding: 0.75em 1.5em;
+            border-radius: 5px;
+            font-weight: bold;
             text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .center-button a:hover {
+            background-color: #1976D2;
         }
 
         footer {
@@ -70,8 +65,11 @@
         <p>Mou hlavní hodnotou je empatie, absolutní diskrétnost a schopnost pozorně naslouchat.</p>
         <p>Můj přístup je založen na vlastních zkušenostech a porozumění tomu, jak osvobozující může být možnost říct vše, co máte na srdci, a vědět, že jste skutečně slyšeni.</p>
         <p>Není mým cílem vám radit nebo nabízet rychlá řešení, ale vytvořit pro vás prostor, kde se můžete svobodně vyjádřit a prožít úlevu díky skutečnému lidskému spojení.</p>
-        <p><a href="https://www.tichyspojenec.cz/">← Zpět na hlavní stránku</a></p>
     </section>
+
+    <div class="center-button">
+        <a href="https://www.tichyspojenec.cz/">Hlavní stránka</a>
+    </div>
 
     <footer>
         &copy; Tichý spojenec
