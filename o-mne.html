@@ -42,14 +42,20 @@
 
     section {
       max-width: 600px;
-      padding: 1em 2em;
+      padding: 1.5em 1.2em;
       text-align: left;
     }
 
+    picture {
+      display: block;
+    }
+
     img.hero {
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       margin-bottom: 1em;
+      display: block;
     }
 
     .center-button {
@@ -83,12 +89,16 @@
 
   <section>
     <picture>
-  <source srcset="chatgpt/o-mne-ilustrace.webp" type="image/webp">
-  <img src="chatgpt/o-mne-ilustrace.PNG" alt="Ilustrační obrázek – Tichý spojenec" class="hero" />
-</picture>
+      <source srcset="chatgpt/o-mne-ilustrace.webp" type="image/webp">
+      <img src="chatgpt/o-mne-ilustrace.PNG" alt="Ilustrační obrázek – Tichý spojenec" class="hero" loading="lazy" />
+    </picture>
+
     <p>Jsem váš <strong>Tichý spojenec</strong> – člověk, který rozumí tomu, jak je důležité být opravdu vyslyšen. Službu Tichý spojenec jsem založil z přesvědčení, že každý si zaslouží možnost se bez obav svěřit, aniž by byl souzen nebo hodnocen.</p>
+
     <p>Mou hlavní hodnotou je empatie, absolutní diskrétnost a schopnost pozorně naslouchat.</p>
+
     <p>Můj přístup je založen na vlastních zkušenostech a porozumění tomu, jak osvobozující může být možnost říct vše, co máte na srdci, a vědět, že jste skutečně slyšeni.</p>
+
     <p>Není mým cílem vám radit nebo nabízet rychlá řešení, ale vytvořit pro vás prostor, kde se můžete svobodně vyjádřit a prožít úlevu díky skutečnému lidskému spojení.</p>
   </section>
 
