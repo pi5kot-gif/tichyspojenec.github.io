@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-theme="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,16 +28,44 @@
 
   <!-- Styles -->
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #2196F3;
+      --accent-hover: #1976D2;
+      --section-bg: #f5f5f5;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #2196F3;
+      --accent-hover: #1976D2;
+      --section-bg: #1e1e1e;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      background: none;
+      border: none;
+      font-size: 1.4em;
+      cursor: pointer;
+      color: var(--text);
     }
 
     nav {
@@ -47,7 +75,7 @@
     }
 
     nav a {
-      color: #90caf9;
+      color: var(--accent);
       text-decoration: none;
       margin: 0 1em;
     }
@@ -76,7 +104,7 @@
     }
 
     .center-button a {
-      background-color: #2196F3;
+      background-color: var(--accent);
       color: white;
       padding: 0.75em 1.5em;
       border-radius: 5px;
@@ -86,11 +114,11 @@
     }
 
     .center-button a:hover {
-      background-color: #1976D2;
+      background-color: var(--accent-hover);
     }
 
     footer {
-      margin: 2em 0 1em 0;
+      margin: 2em 0 1em;
       font-size: 0.9em;
       color: #aaaaaa;
       text-align: center;
@@ -98,6 +126,8 @@
   </style>
 </head>
 <body>
+
+  <button class="theme-toggle" onclick="toggleTheme()" title="Přepnout světlo/tma">🌓</button>
 
   <nav>
     <a href="/">Úvod</a> |
@@ -128,6 +158,23 @@
   <footer>
     &copy; Tichý spojenec
   </footer>
+
+  <script>
+    // Nastavení výchozího režimu podle localStorage nebo systému
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+  </script>
 
 </body>
 </html>
