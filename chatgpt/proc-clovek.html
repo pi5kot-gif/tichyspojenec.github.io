@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-theme="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,26 +20,26 @@
 
   <style>
     :root {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --link-color: #90caf9;
-      --accent-color: #2196F3;
-      --accent-hover: #1976D2;
-      --heading-color: #f44336;
+      --bg: #ffffff;
+      --text: #000000;
+      --link: #1a73e8;
+      --accent: #1a73e8;
+      --accent-hover: #155ab6;
+      --heading: #d32f2f;
     }
 
-    body.light {
-      --bg-color: #ffffff;
-      --text-color: #222222;
-      --link-color: #1a73e8;
-      --accent-color: #1a73e8;
-      --accent-hover: #155ab6;
-      --heading-color: #d32f2f;
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --link: #90caf9;
+      --accent: #2196F3;
+      --accent-hover: #1976D2;
+      --heading: #f44336;
     }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background-color: var(--bg);
+      color: var(--text);
       font-family: 'Segoe UI', sans-serif;
       line-height: 1.8;
       margin: 0;
@@ -50,6 +50,17 @@
       min-height: 100vh;
     }
 
+    .theme-toggle {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      background: none;
+      border: none;
+      font-size: 1.4em;
+      cursor: pointer;
+      color: var(--text);
+    }
+
     nav {
       text-align: center;
       margin-bottom: 2em;
@@ -57,29 +68,13 @@
     }
 
     nav a {
-      color: var(--link-color);
+      color: var(--link);
       text-decoration: none;
       margin: 0 1em;
     }
 
-    .theme-toggle {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: var(--link-color);
-      transition: transform 0.2s ease;
-    }
-
-    .theme-toggle:hover {
-      transform: scale(1.2);
-    }
-
     h1 {
-      color: var(--heading-color);
+      color: var(--heading);
       font-size: 2em;
       margin-bottom: 0.6em;
       text-align: center;
@@ -95,7 +90,7 @@
     }
 
     .center-button a {
-      background-color: var(--accent-color);
+      background-color: var(--accent);
       color: white;
       padding: 0.75em 1.5em;
       border-radius: 5px;
@@ -111,7 +106,7 @@
 </head>
 <body>
 
-  <button class="theme-toggle" id="themeToggle" aria-label="Přepnout režim">🌙</button>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Přepnout světlo/tma">🌓</button>
 
   <nav>
     <a href="/">Úvod</a> |
@@ -134,21 +129,20 @@
   </div>
 
   <script>
-    // Při načtení – zjistit stav z localStorage
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme');
+    // Výchozí motiv (dle systému nebo uložený v localStorage)
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
 
-    if (savedTheme === 'light') {
-      document.body.classList.add('light');
-      themeToggle.textContent = '☀️';
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
     }
-
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light');
-      const isLight = document.body.classList.contains('light');
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
   </script>
 
 </body>
