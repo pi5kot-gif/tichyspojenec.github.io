@@ -1,224 +1,244 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-theme="auto">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tichý spojenec</title>
-    <link rel="preload" as="image" href="chatgpt/o-mne-ilustrace.PNG" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tichý spojenec</title>
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.tichyspojenec.cz/" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.tichyspojenec.cz/" />
 
-    <!-- SEO -->
-    <meta name="description" content="Diskrétní naslouchání po telefonu nebo chatu. Pro chvíle, kdy potřebuješ klid a pochopení." />
-    <meta name="keywords" content="tichý spojenec, tichý spojenec web, tichý spojenec služba, tichý spojenec pomoc, tichý spojenec kontakt, tichý spojenec česky, tichý spojenec online, tichý spojenec film, tichý spojenec rozhovor, naslouchání, diskrétní rozhovor, telefonická pomoc, anonymní naslouchání, někdo mě vyslechne, vypovídat se, promluvit si, podpora po telefonu, rozhovor, duševní podpora, diskrétní poslech, pocit osamění, člověk na poslouchání, sdílení emocí, anonymní hovor, psychická úleva, chat" />
-    <meta name="robots" content="index, follow" />
+  <!-- SEO -->
+  <meta name="description" content="Diskrétní naslouchání po telefonu nebo chatu. Pro chvíle, kdy potřebuješ klid a pochopení." />
+  <meta name="keywords" content="tichý spojenec, naslouchání, diskrétní rozhovor, anonymní, podpora, chat, telefon" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="Wux8bEKu5weAqxjuTeFRTQVYCtM_RJPL6t5oRrv6S5A" />
 
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="Wux8bEKu5weAqxjuTeFRTQVYCtM_RJPL6t5oRrv6S5A" />
+  <!-- OG -->
+  <meta property="og:title" content="Tichý spojenec" />
+  <meta property="og:description" content="Naslouchám ti po telefonu nebo formou chatu. Diskrétně a s pochopením." />
+  <meta property="og:url" content="https://www.tichyspojenec.cz" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tichý spojenec" />
-    <meta property="og:description" content="Naslouchám ti po telefonu nebo formou chatu. Diskrétně a s pochopením." />
-    <meta property="og:url" content="https://www.tichyspojenec.cz" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK421N47RY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YK421N47RY');
+  </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK421N47RY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YK421N47RY');
-    </script>
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #2196F3;
+      --accent-hover: #1976D2;
+      --section-bg: #f5f5f5;
+      --form-bg: #f5f5f5;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #121212;
-            color: #f0f0f0;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #2196F3;
+      --accent-hover: #1976D2;
+      --section-bg: #1e1e1e;
+      --form-bg: #1e1e1e;
+    }
 
-        header {
-            padding: 2em 1em 1em 1em;
-            text-align: center;
-        }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
 
-        header h1 {
-            font-size: 1.8em;
-            margin: 0;
-            color: #ffffff;
-        }
+    header {
+      padding: 2em 1em 1em;
+      text-align: center;
+    }
 
-        section {
-            max-width: 600px;
-            padding: 1em;
-            text-align: center;
-        }
+    .theme-toggle {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      background: none;
+      border: none;
+      font-size: 1.4em;
+      cursor: pointer;
+      color: var(--text);
+    }
 
-        .services {
-            background-color: #1e1e1e;
-            padding: 1em;
-            border-radius: 8px;
-            margin: 1.5em 0;
-            width: 100%;
-        }
+    section {
+      max-width: 600px;
+      padding: 1em;
+      text-align: center;
+    }
 
-        .service {
-            margin-bottom: 2em;
-        }
+    .services {
+      background-color: var(--section-bg);
+      padding: 1em;
+      border-radius: 8px;
+      margin: 1.5em 0;
+      width: 100%;
+    }
 
-        .service h3 {
-            margin-bottom: 0.3em;
-        }
+    .service {
+      margin-bottom: 2em;
+    }
 
-        a.button {
-            display: inline-block;
-            margin-top: 0.5em;
-            padding: 0.75em 1.5em;
-            background-color: #2196F3;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    .service h3 {
+      margin-bottom: 0.3em;
+    }
 
-        a.button:hover {
-            background-color: #1976D2;
-        }
+    a.button, button[type="submit"] {
+      display: inline-block;
+      margin-top: 0.5em;
+      padding: 0.75em 1.5em;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
 
-        form {
-            background-color: #1e1e1e;
-            padding: 1em;
-            border-radius: 8px;
-            margin: 2em 0;
-            width: 100%;
-            max-width: 600px;
-        }
+    a.button:hover, button[type="submit"]:hover {
+      background-color: var(--accent-hover);
+    }
 
-        textarea {
-            width: 100%;
-            padding: 0.75em;
-            border: none;
-            border-radius: 4px;
-            resize: vertical;
-            font-family: 'Segoe UI', sans-serif;
-        }
+    form {
+      background-color: var(--form-bg);
+      padding: 1em;
+      border-radius: 8px;
+      margin: 2em 0;
+      width: 100%;
+      max-width: 600px;
+    }
 
-        button[type="submit"] {
-            margin-top: 1em;
-            padding: 0.75em 1.5em;
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    textarea {
+      width: 100%;
+      padding: 0.75em;
+      border: none;
+      border-radius: 4px;
+      resize: vertical;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        button[type="submit"]:hover {
-            background-color: #1976D2;
-        }
-
-        footer {
-            margin: 2em 0 1em 0;
-            font-size: 0.9em;
-            color: #aaaaaa;
-            text-align: center;
-        }
-    </style>
+    footer {
+      margin: 2em 0 1em;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <body>
-  <nav>... odkazy ...</nav>
-  <section>...</section>
-    <header>
-        <h1>Někdy stačí, když tě někdo v klidu vyslechne.</h1>
-    </header>
 
-    <section>
-        <p>Nabízím diskrétní naslouchání – po telefonu i formou chatu.</p>
-        <p>Jsem tady pro tebe – s respektem a pochopením.</p>
-    </section>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Přepnout světlo/tma">🌓</button>
 
-    <section style="text-align: center; margin-top: 2em;">
-  <a href="o-mne.html" style="display: inline-block; padding: 0.75em 1.5em; background-color: #2196F3; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.05em;">
-    👉 Proč to dělám
-  </a>
-</section>
+  <header>
+    <h1>Někdy stačí, když tě někdo v klidu vyslechne.</h1>
+  </header>
 
-    <section class="services">
-        <div class="service">
-            <h3>📞 Naslouchání – telefon</h3>
-            <p>30 minut – 500 Kč</p>
-            <a href="https://cal.com/tichyspojenec/30minhovor" class="button">Rezervovat hovor 30 min</a>
-        </div>
-        <div class="service">
-            <h3>📞 Naslouchání – telefon</h3>
-            <p>60 minut – 800 Kč</p>
-            <a href="https://cal.com/tichyspojenec/60minhovor" class="button">Rezervovat hovor 60 min</a>
-        </div>
-        <div class="service">
-            <h3>💬 Naslouchání – chat</h3>
-            <p>30 minut – 300 Kč</p>
-            <a href="https://cal.com/tichyspojenec/naslouchani-30-minut-chat" class="button">Rezervovat chat 30 min</a>
-        </div>
-        <div class="service">
-            <h3>💬 Naslouchání – chat</h3>
-            <p>60 minut – 500 Kč</p>
-            <a href="https://cal.com/tichyspojenec/naslouchani-60-minut-chat" class="button">Rezervovat chat 60 min</a>
-        </div>
-    </section>
+  <section>
+    <p>Nabízím diskrétní naslouchání – po telefonu i formou chatu.</p>
+    <p>Jsem tady pro tebe – s respektem a pochopením.</p>
+  </section>
 
-    <section style="text-align: left; max-width: 600px; padding: 1em 2em;">
-        <p>Možná hledáš někoho, kdo tě diskrétně vyslechne. Nechceš rady, jen porozumění.</p>
-        <p>Jsem tu, když se potřebuješ vypovídat – po telefonu nebo formou chatu.</p>
-        <p>Nabízím naslouchání v klidu, anonymně a s respektem k tomu, co právě prožíváš.</p>
-    </section>
+  <section>
+    <a href="o-mne.html" class="button">👉 Proč to dělám</a>
+  </section>
 
-    <a href="https://cal.com/tichyspojenec" class="button">Rezervovat si čas</a>
+  <section class="services">
+    <div class="service">
+      <h3>📞 Naslouchání – telefon</h3>
+      <p>30 minut – 500 Kč</p>
+      <a href="https://cal.com/tichyspojenec/30minhovor" class="button">Rezervovat hovor 30 min</a>
+    </div>
+    <div class="service">
+      <h3>📞 Naslouchání – telefon</h3>
+      <p>60 minut – 800 Kč</p>
+      <a href="https://cal.com/tichyspojenec/60minhovor" class="button">Rezervovat hovor 60 min</a>
+    </div>
+    <div class="service">
+      <h3>💬 Naslouchání – chat</h3>
+      <p>30 minut – 300 Kč</p>
+      <a href="https://cal.com/tichyspojenec/naslouchani-30-minut-chat" class="button">Rezervovat chat 30 min</a>
+    </div>
+    <div class="service">
+      <h3>💬 Naslouchání – chat</h3>
+      <p>60 minut – 500 Kč</p>
+      <a href="https://cal.com/tichyspojenec/naslouchani-60-minut-chat" class="button">Rezervovat chat 60 min</a>
+    </div>
+  </section>
 
-<p style="font-size: 0.9em; color: #aaa; text-align: center; margin-top: 1em;">
-  Platba probíhá bezpečně <strong>předem</strong> přes platební bránu <strong>Stripe</strong>.<br>
-  Stačí běžná platební karta.
-</p>
+  <section>
+    <p>Možná hledáš někoho, kdo tě diskrétně vyslechne. Nechceš rady, jen porozumění.</p>
+    <p>Jsem tu, když se potřebuješ vypovídat – po telefonu nebo formou chatu.</p>
+  </section>
 
-<form action="https://formspree.io/f/mldnyewr" method="POST" style="text-align: center; background-color: #1e1e1e; padding: 1em; border-radius: 8px; margin: 2em 0; max-width: 600px;">
+  <a href="https://cal.com/tichyspojenec" class="button">Rezervovat si čas</a>
+
+  <p style="font-size: 0.9em; color: #aaa; text-align: center; margin-top: 1em;">
+    Platba probíhá bezpečně <strong>předem</strong> přes platební bránu <strong>Stripe</strong>.<br>
+    Stačí běžná platební karta.
+  </p>
+
+  <form action="https://formspree.io/f/mldnyewr" method="POST">
     <input type="hidden" name="_redirect" value="https://www.tichyspojenec.cz/diky.html" />
-    <label for="message" style="display: block; margin-bottom: 0.5em; font-weight: bold;">Tvoje anonymní zpráva:</label>
-    <textarea name="message" id="message" rows="6" placeholder="Sem napiš cokoliv…" required style="width: 100%; max-width: 100%; padding: 0.75em; border: none; border-radius: 4px; resize: vertical; font-family: 'Segoe UI', sans-serif;"></textarea>
+    <label for="message"><strong>Tvoje anonymní zpráva:</strong></label>
+    <textarea name="message" id="message" rows="6" placeholder="Sem napiš cokoliv…" required></textarea>
     <br>
-    <button type="submit" style="margin-top: 1em; padding: 0.75em 1.5em; background-color: #2196F3; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Odeslat anonymně</button>
-</form>
+    <button type="submit">Odeslat anonymně</button>
+  </form>
 
-    <footer>
+  <footer>
     Kontakt: tichyspojenec@gmail.com<br>
-    <a href="/chatgpt/proc-clovek.html" style="color: #888; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4em; margin-top: 1em;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e53935" viewBox="0 0 16 16">
-        <path d="M8 2.748l-.717-.737C5.6.281 2.514 1.072 1.4 3.053c-.523.958-.641 2.163-.314 3.163.707 2.195 3.418 4.385 6.314 6.375 2.896-1.99 5.607-4.18 6.314-6.375.327-1 .21-2.205-.314-3.163C13.486 1.072 10.4.28 8.717 2.01L8 2.748z"/>
-      </svg>
-      Proč právě člověk a ne AI?
+    <a href="/chatgpt/proc-clovek.html" style="color: #888; text-decoration: none;">
+      ❤️ Proč právě člověk a ne AI?
     </a><br>
     &copy; Tichý spojenec
-</footer>
+  </footer>
 
-    <p style="font-size: 0.8em; color: #666; text-align: center; margin-top: 2em;">
-        Poznámka: Tato služba <strong>Tichý spojenec</strong> nesouvisí s filmem stejného názvu. Jde o diskrétní a anonymní naslouchání po telefonu nebo chatu.
-    </p>
+  <p style="font-size: 0.8em; color: #666; text-align: center;">
+    Poznámka: Tato služba <strong>Tichý spojenec</strong> nesouvisí s filmem stejného názvu.
+  </p>
+
+  <script>
+    // Set theme on load
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+  </script>
 
 </body>
 </html>
