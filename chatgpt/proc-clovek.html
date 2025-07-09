@@ -8,13 +8,11 @@
   <link rel="canonical" href="https://www.tichyspojenec.cz/chatgpt/proc-clovek.html" />
   <meta name="description" content="Proč nestačí umělá inteligence, když tě něco tíží? Odpověď najdeš tady." />
   <meta name="robots" content="index, follow" />
-
   <meta property="og:title" content="Proč člověk a ne AI – Tichý spojenec" />
   <meta property="og:description" content="Umělá inteligence ti nerozumí. Ale člověk ano. Proto vznikl Tichý spojenec." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.tichyspojenec.cz/chatgpt/proc-clovek.html" />
   <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png" />
-
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -40,9 +38,9 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
       line-height: 1.8;
       margin: 0;
       padding: 2em;
@@ -64,24 +62,20 @@
       margin: 0 1em;
     }
 
-    .toggle-theme {
+    .theme-toggle {
       position: absolute;
       top: 1em;
       right: 1em;
       background: none;
-      border: 2px solid var(--accent-color);
-      color: var(--accent-color);
-      padding: 0.4em 0.8em;
-      border-radius: 4px;
+      border: none;
+      font-size: 1.5em;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 0.9em;
-      transition: all 0.3s ease;
+      color: var(--link-color);
+      transition: transform 0.2s ease;
     }
 
-    .toggle-theme:hover {
-      background-color: var(--accent-color);
-      color: #fff;
+    .theme-toggle:hover {
+      transform: scale(1.2);
     }
 
     h1 {
@@ -117,7 +111,7 @@
 </head>
 <body>
 
-  <button class="toggle-theme" onclick="toggleTheme()">🌙 Světlý/tmavý režim</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Přepnout režim">🌙</button>
 
   <nav>
     <a href="/">Úvod</a> |
@@ -140,14 +134,21 @@
   </div>
 
   <script>
-    // Zkontroluj a načti režim
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') document.body.classList.add('light');
+    // Při načtení – zjistit stav z localStorage
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
 
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light');
+      themeToggle.textContent = '☀️';
     }
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
   </script>
 
 </body>
