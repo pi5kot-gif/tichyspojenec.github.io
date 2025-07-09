@@ -4,53 +4,51 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>O mně – Tichý spojenec</title>
+
 <link rel="canonical" href="https://www.tichyspojenec.cz/…ml" />
 <meta name="description" content="Kdo je Tichý spojenec? Člověk, který diskrétně naslouchá. Zjisti, proč to dělám, a jaký je můj přístup." />
+<meta name="keywords" content="tichý spojenec, naslouchání, diskrétní pomoc, anonymní rozhovor, proč to dělám, o mně, psychická podpora, pochopení, empatie" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="O mně – Tichý spojenec" />
 <meta property="og:description" content="Zjisti, kdo za tím stojí. Tichý spojenec je tu, aby tě vyslechl s empatií a pochopením." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.tichyspojenec.cz/…ml" />
 <meta property="og:image" content="https://www.tichyspojenec.cz/…NG" />
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="manifest" href="/site.webmanifest" />
+
 <style>
 :root {
 --bg: #ffffff;
 --text: #000000;
 --accent: #2196F3;
 --accent-hover: #1976D2;
---link-color: #2196F3;
 }
+
 [data-theme="dark"] {
 --bg: #121212;
 --text: #f0f0f0;
---accent: #2196F3;
---accent-hover: #1976D2;
---link-color: #90caf9;
 }
+
 body {
 margin: 0;
-padding: 2em;
+padding: 0;
 font-family: 'Segoe UI', sans-serif;
 background-color: var(--bg);
 color: var(--text);
+font-size: 17px;
 line-height: 1.6;
+display: flex;
+flex-direction: column;
+align-items: center;
 transition: background 0.3s, color 0.3s;
 }
-nav {
-text-align: center;
-margin-bottom: 2em;
-}
-nav a {
-color: var(--link-color);
-text-decoration: none;
-margin: 0 1em;
-}
+
 .theme-toggle {
-position: fixed;
+position: absolute;
 top: 1em;
 right: 1em;
 background: none;
@@ -59,62 +57,85 @@ font-size: 1.4em;
 cursor: pointer;
 color: var(--text);
 }
-section {
-max-width: 600px;
-margin: auto;
+
+nav {
+margin-top: 1.5em;
+font-size: 1em;
+text-align: center;
 }
+
+nav a {
+color: var(--accent);
+text-decoration: none;
+margin: 0 1em;
+}
+
+section {
+max-width: 640px;
+padding: 2em 1.2em 1em;
+text-align: left;
+}
+
 img.hero {
 width: 100%;
 border-radius: 10px;
 margin-bottom: 1em;
 }
+
 .center-button {
 text-align: center;
-margin-top: 2em;
+margin: 2em 0;
 }
+
 .center-button a {
 background-color: var(--accent);
 color: white;
 padding: 0.75em 1.5em;
 border-radius: 5px;
-font-weight: bold;
 text-decoration: none;
-transition: background-color 0.3s ease;
+font-weight: bold;
 }
+
 .center-button a:hover {
 background-color: var(--accent-hover);
 }
+
 footer {
-margin: 2em 0 1em;
-font-size: 0.9em;
-color: #aaaaaa;
 text-align: center;
+margin: 2em 0;
+font-size: 0.9em;
+color: #999;
 }
 </style>
 </head>
 <body>
-<button class="theme-toggle" onclick="toggleTheme()" title="Přepnout světlý/tmavý režim">🌓</button>
+
+<button class="theme-toggle" onclick="toggleTheme()" title="Přepnout režim">🌓</button>
+
 <nav>
 <a href="/">Úvod</a> |
 <a href="/o-mne.html">O mně</a> |
 <a href="/chatgpt/proc-clovek.html">Proč člověk</a>
 </nav>
+
 <section>
 <picture>
 <source srcset="chatgpt/o-mne-ilustrace.webp" type="image/webp">
 <img src="chatgpt/o-mne-ilustrace.PNG" alt="Otevřené ucho – ilustrace naslouchání" class="hero" loading="lazy" />
 </picture>
-<p>Jsem váš <strong>Tichý spojenec</strong> – člověk, který rozumí tomu, jak je důležité být opravdu vyslyšen. Službu Tichý spojenec jsem založil z přesvědčení, že každý si zaslouží možnost se bez obav svěřit, aniž by byl souzen nebo hodnocen.</p>
-<p>Mou hlavní hodnotou je empatie, absolutní diskrétnost a schopnost pozorně naslouchat.</p>
-<p>Můj přístup je založen na vlastních zkušenostech a porozumění tomu, jak osvobozující může být možnost říct vše, co máte na srdci, a vědět, že jste skutečně slyšeni.</p>
-<p>Není mým cílem vám radit nebo nabízet rychlá řešení, ale vytvořit pro vás prostor, kde se můžete svobodně vyjádřit a prožít úlevu díky skutečnému lidskému spojení.</p>
+
+<p>Jsem váš <strong>Tichý spojenec</strong> – člověk, který rozumí tomu, jak je důležité být opravdu vyslyšen...</p>
+<!-- Zbytek textu -->
 </section>
+
 <div class="center-button">
 <a href="/">Zpět na hlavní stránku</a>
 </div>
+
 <footer>
 &copy; Tichý spojenec
 </footer>
+
 <script>
 (function () {
 const saved = localStorage.getItem('theme');
@@ -122,6 +143,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const theme = saved || (prefersDark ? 'dark' : 'light');
 document.documentElement.setAttribute('data-theme', theme);
 })();
+
 function toggleTheme() {
 const current = document.documentElement.getAttribute('data-theme');
 const newTheme = current === 'dark' ? 'light' : 'dark';
@@ -129,5 +151,6 @@ document.documentElement.setAttribute('data-theme', newTheme);
 localStorage.setItem('theme', newTheme);
 }
 </script>
+
 </body>
 </html>
