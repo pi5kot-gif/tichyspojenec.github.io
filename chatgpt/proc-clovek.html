@@ -5,38 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Proč člověk a ne AI – Tichý spojenec</title>
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://www.tichyspojenec.cz/chatgpt/proc-clovek.html" />
-
-  <!-- SEO -->
   <meta name="description" content="Proč nestačí umělá inteligence, když tě něco tíží? Odpověď najdeš tady." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Proč člověk a ne AI – Tichý spojenec" />
   <meta property="og:description" content="Umělá inteligence ti nerozumí. Ale člověk ano. Proto vznikl Tichý spojenec." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.tichyspojenec.cz/chatgpt/proc-clovek.html" />
   <meta property="og:image" content="https://www.tichyspojenec.cz/apple-touch-icon.png" />
 
-  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Stylování -->
   <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --link-color: #90caf9;
+      --accent-color: #2196F3;
+      --accent-hover: #1976D2;
+      --heading-color: #f44336;
+    }
+
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --link-color: #1a73e8;
+      --accent-color: #1a73e8;
+      --accent-hover: #155ab6;
+      --heading-color: #d32f2f;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      margin: 0;
       padding: 2em;
       max-width: 800px;
-      margin: auto;
-      background: linear-gradient(to right, #3e2723, #212121, #0d47a1);
-      color: #f0f0f0;
-      line-height: 1.8;
+      margin-inline: auto;
+      transition: background-color 0.3s, color 0.3s;
       min-height: 100vh;
-      background-attachment: fixed;
     }
 
     nav {
@@ -46,13 +59,33 @@
     }
 
     nav a {
-      color: #90caf9;
+      color: var(--link-color);
       text-decoration: none;
       margin: 0 1em;
     }
 
+    .toggle-theme {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      background: none;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 0.4em 0.8em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
     h1 {
-      color: #f44336;
+      color: var(--heading-color);
       font-size: 2em;
       margin-bottom: 0.6em;
       text-align: center;
@@ -68,7 +101,7 @@
     }
 
     .center-button a {
-      background-color: #2196F3;
+      background-color: var(--accent-color);
       color: white;
       padding: 0.75em 1.5em;
       border-radius: 5px;
@@ -78,11 +111,13 @@
     }
 
     .center-button a:hover {
-      background-color: #1976D2;
+      background-color: var(--accent-hover);
     }
   </style>
 </head>
 <body>
+
+  <button class="toggle-theme" onclick="toggleTheme()">🌙 Světlý/tmavý režim</button>
 
   <nav>
     <a href="/">Úvod</a> |
@@ -103,6 +138,17 @@
   <div class="center-button">
     <a href="/">Zpět na hlavní stránku</a>
   </div>
+
+  <script>
+    // Zkontroluj a načti režim
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') document.body.classList.add('light');
+
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+  </script>
 
 </body>
 </html>
